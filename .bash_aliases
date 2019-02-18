@@ -14,4 +14,5 @@ alias excel='localc'
 alias word='lowriter'
 alias ppt='loimpress'
 alias pdf='xdg-open'
+alias term='gnome-terminal'
 
