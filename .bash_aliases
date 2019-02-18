@@ -15,4 +15,5 @@ alias word='lowriter'
 alias ppt='loimpress'
 alias pdf='xdg-open'
 alias term='gnome-terminal'
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|time\ to\ empty|time\ to\ full|percentage"'
 
