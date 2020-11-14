@@ -1,6 +1,7 @@
 alias la='ls -lahrt --color=always | awk '\''{print $5"\t"$6" "$7"\t"$8" "$9}'\'''
 alias gs='git status'
 alias ga='git add'
+alias gd='git diff'
 alias gap='git add --patch'
 alias gc='git commit'
 alias gp='git push'
