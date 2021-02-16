@@ -28,10 +28,20 @@ set linebreak			        " don't wrap in the middle of a line because it's annoyi
 set wildignore+=.pyc,.o,.out 	" ignore these
 au BufNewfile * start		    " for new files, default to insert mode
 au Bufnewfile,BufRead *.md,*.tex setlocal spell " spellcheck markdown and tex files
+" use just ; instead of : for commands like :w -> which now becomes just ;w
+nnoremap ; : 
+
+" moving down a line on wrapped lines goes down a row, not to the next line
+nnoremap j gj
+nnoremap k gk
+
+" clear search highlihgt using ./ instead of :nohl
+nmap <silent> ./ :nohlsearch<CR>
 
 " Mappings
 " Close braces when typing first one
 autocmd FileType cpp inoremap { {<Esc>o}<Esc>ko
+autocmd FileType c inoremap { {<Esc>o}<Esc>ko
 
 " Directional movement among split windows. Read as 'Map <C-j> to work as if typing <C-W>j
 map <C-j> <C-W>j 
@@ -43,13 +53,23 @@ map <C-h> <C-W>h
 " Switch left and right
 map <C-i> <C-W>i
 
-" Resize split panes equally
-map <C-r> <C-W>= 
+" ctags 
+map tt <C-]>
+map T <C-t>
 
 " Search
 set ignorecase			    	" ignore case while searching
 set hlsearch					" highlight all matches
 set smartcase					" automatically go case-sensitive if there is a capital letter
+set incsearch                   " autocomplete searches as you type
 
 " prevent request to hit enter when opening vim ugh
 set shortmess=at
+
+" persistent undo in between sessions
+set undofile
+
+" always show next match in middle of screen
+nnoremap n nzz
+nnoremap N Nzz
+
