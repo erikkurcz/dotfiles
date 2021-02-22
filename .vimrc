@@ -40,8 +40,9 @@ nmap <silent> ./ :nohlsearch<CR>
 
 " Mappings
 " Close braces when typing first one
-autocmd FileType cpp inoremap { {<Esc>o}<Esc>ko
 autocmd FileType c inoremap { {<Esc>o}<Esc>ko
+autocmd FileType cpp inoremap { {<Esc>o}<Esc>ko
+autocmd FileType rust inoremap { {<Esc>o}<Esc>ko
 
 " Directional movement among split windows. Read as 'Map <C-j> to work as if typing <C-W>j
 map <C-j> <C-W>j 
